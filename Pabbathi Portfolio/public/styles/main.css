@@ -1,0 +1,45 @@
+body{
+    background-color: saddlebrown;
+}
+h1{
+    text-align: center;
+    color: wheat;
+    background-color: saddlebrown;
+}
+h2{
+    color: wheat;
+}
+h3{
+    color: wheat;
+}
+h4{
+    color: wheat;
+}
+.photo{
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border: solid wheat 10px;
+}
+p{
+    color: wheat;
+}
+dl{
+    color: wheat;
+}
+dt{
+    color: wheat;
+}
+dd{
+    color: wheat;
+}
+ul{
+    color: wheat;
+}
+footer{
+    color: wheat;
+}
+.portfolioitems{
+    color: wheat;
+}
+
