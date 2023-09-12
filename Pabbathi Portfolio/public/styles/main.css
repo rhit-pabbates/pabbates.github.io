@@ -1,45 +1,109 @@
 body{
-    background-color: saddlebrown;
+    padding-left: 4em;
+    font-size: 18px;
+    line-height: 1.5;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--body-color);
+    background-color: var(--contrast-color);
 }
-h1{
-    text-align: center;
-    color: wheat;
-    background-color: saddlebrown;
+h1, h2, h3{
+    line-height: 1.2;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--heading-color);
 }
-h2{
-    color: wheat;
+body#about img{
+    height: 25em;
 }
-h3{
-    color: wheat;
-}
-h4{
-    color: wheat;
-}
-.photo{
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    border: solid wheat 10px;
+body#portfolio img{
+    height: 25em;
 }
 p{
-    color: wheat;
+    max-width: 50em;
+    font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
-dl{
-    color: wheat;
+a{
+    color: var(--body-color);
+    text-decoration-line: var(--contrast-color);
 }
-dt{
-    color: wheat;
+a:hover{
+    color:lightyellow;
 }
-dd{
-    color: wheat;
+main{
+    background-color: rgba(var(--light-color), 0.7);
 }
-ul{
-    color: wheat;
+:root{
+    --vertical-space: 2rem;
+    --horizontal-space: 3rem;
+    --light-color: 95, 89, 81;
+    --body-color: #A66D60;
+    --heading-color: #BFA38A;
+    --contrast-color: #591812;
 }
-footer{
-    color: wheat;
+body{
+    display: grid;
+    grid-template-areas: "head nav"
+                         "main main"
+                         "foot foot";
+    grid-template-columns: 1fr 4fr;
+    grid-template-rows: auto auto 1fr auto;
 }
-.portfolioitems{
-    color: wheat;
+@media screen and (min-width: 23em) {
+    body{
+    grid-template-areas: "head nav"
+                         "nav main"
+                         "foot foot";
+    grid-template-rows: auto 1fr auto;
+    }
 }
+body > *{
+    padding-left: var(--horizontal-space);
+}
+body > header{
+    grid-area: head;
+}
+body > nav{
+    grid-area: nav;
+}
+body > nav ul{
+    list-style-type: none;
+    padding: 0;
+}
+body > nav ul li{
+    display: inline;
+    padding-right: 1rem;
+}
+body > main{
+    grid-area: main;
+}
+body > footer{
+    grid-area: foot;
+}
+body #portfolio ul #portfolioitems{
+    display: flex;
+    flex-wrap: wrap;
+    flex: 1;
+    list-style-type: none;
+    padding: 0;
+}
+@media screen and (min-width: 23em){
+    body #portfolio ul #portfolioitems li{
+    flex-basis: 48%;
+    padding-right: 2%;
+    }
+}
+body #portfolio ul #portfolioitems li img{
+    max-width: 100%;
+}
+header, footer{
+    padding-top: var(--vertical-space);
+    padding-bottom: var(--vertical-space);
+}
+header h1, footer h1{
+    margin: 0;
+}
+header, nav, nav a{
+    color: var(--heading-color);
+
+}
+
 
