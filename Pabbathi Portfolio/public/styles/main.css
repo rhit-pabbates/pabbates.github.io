@@ -11,6 +11,7 @@ h1, h2, h3{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: var(--heading-color);
 }
+
 body#about img{
     height: 25em;
 }
@@ -41,18 +42,24 @@ main{
 }
 body{
     display: grid;
-    grid-template-areas: "head nav"
+    grid-template-areas: "head head"
+                         "nav  nav"
                          "main main"
                          "foot foot";
     grid-template-columns: 1fr 4fr;
     grid-template-rows: auto auto 1fr auto;
 }
-@media screen and (min-width: 23em) {
+@media screen and (min-width: 25em) {
     body{
-    grid-template-areas: "head nav"
+    grid-template-areas: "head main"
                          "nav main"
                          "foot foot";
     grid-template-rows: auto 1fr auto;
+    }
+
+    body > nav{
+        grid-area: "nav";
+        padding-top: var(--vertical-space);
     }
 }
 body > *{
@@ -98,6 +105,11 @@ header, footer{
     padding-top: var(--vertical-space);
     padding-bottom: var(--vertical-space);
 }
+
+header{
+    padding-bottom: 0;
+}
+
 header h1, footer h1{
     margin: 0;
 }
@@ -106,4 +118,37 @@ header, nav, nav a{
 
 }
 
+.back-to-top {
+    position: fixed;
+    right: 2rem;
+    bottom: 2rem;
+    border-radius: 100%;
+    background: var(--light-color);
+    padding: 0.5rem;
+    border: none;
+    cursor: pointer;
+    color: lightyellow;
+  }
 
+  .back-to-top-icon {
+    width: 1rem;
+    height: 1rem;
+    color: lightyellow;
+    border: var(--light-color);
+  }
+
+  .back-to-top:hover {
+    opacity: 80%;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .progress-bar {
+    height: 1rem;
+    background: var(--contrast-color);
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
